@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import Heading from '../../UI/Heading/Heading'
 import ButtonContainer from './HomeButtonContainer/HomeButtonContainer'
+import Search from '../../Search/Search'
 
 import classes from './Home.module.css'
 
@@ -10,11 +11,7 @@ const Home = () => {
     
     let div = null
 
-    if (showComponent === "search") {
-        div = (
-            <p>Search</p>
-        )
-    }
+    if (showComponent === "search")  div = <Search />
 
     if (showComponent === "sort") {
         div = (
