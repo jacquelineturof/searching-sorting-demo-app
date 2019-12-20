@@ -9,20 +9,20 @@ import classes from './Button.module.css'
     CLICKED: click handler
     PARAM: a param that needs to be bound to the click handler
 */
-const Button = ({ type, children, clicked, param }) => {
+const Button = ({ type, children, clicked, param, isHome }) => {
     switch ( type ) {
-        case 'homeButton':
+        case 'componentButton':
             return (
                 <button
                     onClick = { () => clicked(param)} 
-                    className = { classes.Home_Button }>
+                    className = { isHome ? classes.Home_Button : classes.Component_Button }>
                     { children }
                 </button>
             )
         default: 
             return (
                 <button>
-
+                    { children }
                 </button>
             )
     }

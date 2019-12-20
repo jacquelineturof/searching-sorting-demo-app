@@ -29,3 +29,13 @@
         inset 6em 3.5em 0 0 #232946;
     }
 }
+
+.Component_Button {
+    outline: none;
+    background-color: #eebbc3;
+    border: 1px solid #232946;
+    color: #232946;
+    width: 20%;
+    height: 40%;
+    font-family: 'Lato', sans-serif;
+}

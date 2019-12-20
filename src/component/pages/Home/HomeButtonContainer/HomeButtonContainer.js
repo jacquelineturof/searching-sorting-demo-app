@@ -7,15 +7,17 @@ import classes from './HomeButtonContainer.module.css'
 const HomeButtonContainer = ({ setComponent}) => (
     <div className = { classes.Button_Container }>
         <Button 
-            type = "homeButton"
+            type = "componentButton"
             clicked = { setComponent }
-            param = "search">
+            param = "search"
+            isHome = { true }>
             Searching
         </Button>
         <Button
             clicked = { setComponent }
             param = "sort" 
-            type = "homeButton">
+            type = "componentButton"
+            isHome = { true }>
             Sorting
         </Button>
     </div>
