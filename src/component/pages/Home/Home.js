@@ -1,18 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Heading from '../../UI/Heading/Heading'
-import Button from '../../UI/Button/Button'
+import ButtonContainer from './HomeButtonContainer/HomeButtonContainer'
 
 import classes from './Home.module.css'
 
-const Home = () => (
-    <section className = { classes.Home }>
-        <Heading />
-        <div className = { classes.Button_Container }>
-            <Button type = "homeButton">Searching</Button>
-            <Button type = "homeButton">Sorting</Button>
-        </div>
-    </section>
-)
+const Home = () => {
+    const [ showComponent, setComponent ] = useState('')
+    
+    let div = null
+
+    if (showComponent === "search") {
+        div = (
+            <p>Search</p>
+        )
+    }
+
+    if (showComponent === "sort") {
+        div = (
+            <p>Sort</p>
+        )
+    }
+
+    return (
+        <section className = { classes.Home }>
+            <Heading />
+            <ButtonContainer setComponent = { setComponent } />
+            { div }
+        </section>
+    )
+}
 
 export default Home
