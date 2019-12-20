@@ -1,24 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import Button from '../UI/Button/Button'
+import ButtonContainer from './SearchButtonContainer/ButtonContainer'
 
 import classes from './Search.module.css'
 
-const Search = () => (
-    <div className = { classes.Search_Component_Container }>
-        <div>
-            <Button 
-                type = "componentButton"
-                isHome = { false }>
-                Linear
-            </Button>
-            <Button 
-                type = "componentButton"
-                isHome = { false }>
-                Binary
-            </Button>
+const Search = () => {
+    const [ animation, setAnimation ] = useState('')
+
+    let div = null
+
+    if (animation === "linear")  div = <p>Linear</p>
+
+    return (
+        <div className = { classes.Search_Component_Container }>
+            <ButtonContainer setAnimation = { setAnimation } />
+            { div }
         </div>
-    </div>
-)
+    )
+}
 
 export default Search
